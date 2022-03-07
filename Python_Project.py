@@ -204,7 +204,7 @@ def Menu():
                 else:
                     raise Exception("la date n'est pas valide",b)
                 print(b)
-
+        
     def InfoNum():
         """
         Cette fonction permet d'afficher les informations par numéro saisi au clavier """
@@ -216,7 +216,7 @@ def Menu():
             if x==p["Numero"]:
                 print(p)
                 break
-
+        
     def cinq():
         """
         la fonction pour afficher les cinqs premiers """
@@ -228,16 +228,20 @@ def Menu():
             ordonne.append(l)
         from operator import itemgetter
         ordonne=sorted(ordonne, key=itemgetter('Moyenne générale'), reverse=True)
-        return ordonne[1:6]
+        print(ordonne[1:6])
     
-    print("Pour afficher les données valides ou invalides taper 1")
-    print("Pour afficher les informations par numéro taper 2")
-    print("Pour afficher les cinqs premiers taper 3")
-    x=input("Entrer votre choix: ")
-    if x=='1':
-        return choice()
-    elif x=='2':
-        return InfoNum()
-    elif x=='3':
-        return cinq()
-    
+    while True:
+        print("Pour afficher les données valides ou invalides taper 1")
+        print("Pour afficher les informations par numéro taper 2")
+        print("Pour afficher les cinqs premiers taper 3")
+        print("0: Pour quitter")
+        x=input("Entrer votre choix: ")
+        if x=='1':
+            choice()
+        elif x=='2':
+            InfoNum()
+        elif x=='3':
+            cinq()
+        elif x=='0':
+            break
+      
